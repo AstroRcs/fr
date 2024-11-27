@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Upload Products</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="#">Admin</a>
+    </nav>
+
+    <main class="admin-panel">
+        <h1>Admin Panel</h1>
+        <p>Add new products to your homepage below.</p>
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="productTitle">Product Title:</label>
+            <input type="text" id="productTitle" name="productTitle" required>
+
+            <label for="productDescription">Product Description:</label>
+            <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
+
+            <label for="productImage">Product Image:</label>
+            <input type="file" id="productImage" name="productImage" accept="image/*" required>
+
+            <label for="productDownload">Download File:</label>
+            <input type="file" id="productDownload" name="productDownload" accept="application/zip, application/pdf, .exe" required>
+
+            <label for="productPage">Product Page (HTML):</label>
+            <input type="text" id="productPage" name="productPage" placeholder="e.g., product1.html" required>
+
+            <button type="submit">Add Product</button>
+        </form>
+
+        <section id="previewSection" class="preview">
+            <h2>Preview of New Product</h2>
+            <div id="previewBox" class="box">
+                <a href="#" id="previewLink">
+                    <img src="#" id="previewImage" alt="Preview Image">
+                    <h3 id="previewTitle">Preview Title</h3>
+                    <p id="previewText">Preview Description</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Vision. All rights reserved.</p>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision - Homepage</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="private/admin/upload.html">Nothing Yet</a>
+        <a href="#">Nothing Yet</a>
+        <a href="#">Nothing Yet</a>
+        <a href="#">Nothing Yet</a>
+    </nav>
+
+    <header>
+        <h1>Welcome to Vision</h1>
+        <p>Discover downloads curated by the admin.</p>
+    </header>
+
+    <section class="downloads">
+        <div class="box">
+            <a href="product1.html">Product 1</a>
+        </div>
+        <!-- More download boxes can be dynamically added here -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Vision</p>
+    </footer>
+</body>
+<script>
+    // index.html script
+document.addEventListener("DOMContentLoaded", function () {
+    const productsContainer = document.querySelector(".downloads");
+    const products = JSON.parse(localStorage.getItem("products")) || [];
+
+    products.forEach(product => {
+        const productBox = document.createElement("div");
+        productBox.classList.add("box");
+
+        productBox.innerHTML = `
+            <a href="${product.page}">
+                <img src="${product.image}" alt="${product.title}">
+                <h3>${product.title}</h3>
+                <p>${product.description}</p>
+            </a>
+        `;
+        productsContainer.appendChild(productBox);
+    });
+});
+</script>
+</html>
